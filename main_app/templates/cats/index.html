@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
   <h1>Cat List</h1>
   {% for cat in cats %}
     <div class="card">
@@ -26,5 +26,7 @@
       </a>
     </div>
   {% endfor %}
-
+{% else %}
+<h1>Login in</h1>
+{% endif %}
 {% endblock %}
